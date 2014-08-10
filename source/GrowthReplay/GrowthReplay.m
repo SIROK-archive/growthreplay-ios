@@ -7,7 +7,7 @@
 //
 
 #import "GrowthReplay.h"
-#import "GRUtils.h"
+#import "GBUtils.h"
 #import "GRClientService.h"
 #import "GRTagService.h"
 #import "GRRecorder.h"
@@ -20,6 +20,8 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @interface GrowthReplay () {
     
+    GBHttpClient *httpClient;
+    
     NSInteger applicationId;
     NSString *secret;
     BOOL debug;
@@ -31,6 +33,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
 }
 
+@property (nonatomic) GBHttpClient *httpClient;
 @property (nonatomic) NSInteger applicationId;
 @property (nonatomic) NSString *secret;
 @property (nonatomic) BOOL debug;
@@ -44,6 +47,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @implementation GrowthReplay
 
+@synthesize httpClient;
 @synthesize applicationId;
 @synthesize secret;
 @synthesize debug;
@@ -92,7 +96,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 - (id) init {
     self = [super init];
     if (self) {
-        [[GRHttpClient sharedInstance] setBaseUrl:[NSURL URLWithString:kGRBaseUrl]];
+        self.httpClient = [[GBHttpClient alloc] initWithBaseUrl:[NSURL URLWithString:kGRBaseUrl]];
         self.recorder = [[GRRecorder alloc] init];
         self.recordedCheck = YES;
     }

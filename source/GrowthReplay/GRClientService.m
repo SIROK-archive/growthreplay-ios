@@ -8,7 +8,7 @@
 
 #import "GRClientService.h"
 #import "GBUtils.h"
-#import "GRMultipartFile.h"
+#import "GBMultipartFile.h"
 
 static GRClientService *sharedInstance = nil;
 
@@ -25,7 +25,7 @@ static GRClientService *sharedInstance = nil;
 
 - (void) authorizeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
 
-    NSString *path = @"authorize";
+    NSString *path = @"v2/authorize";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (applicationId) {
@@ -55,13 +55,13 @@ static GRClientService *sharedInstance = nil;
     
     [body setObject:@"ios" forKey:@"os"];
 
-    GRHttpRequest *httpRequest = [GRHttpRequest instanceWithRequestMethod:GRRequestMethodPost version:@"v2" path:path query:nil body:body];
-    [self httpRequest:httpRequest success:^(GRHttpResponse *httpResponse) {
+    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body];
+    [self httpRequest:httpRequest success:^(GBHttpResponse *httpResponse) {
         GRClient *client = [GRClient domainWithDictionary:httpResponse.body];
         if (success) {
             success(client);
         }
-    } fail:^(GRHttpResponse *httpResponse) {
+    } fail:^(GBHttpResponse *httpResponse) {
         if (fail) {
             fail(httpResponse.httpUrlResponse.statusCode, httpResponse.error);
         }
@@ -71,7 +71,7 @@ static GRClientService *sharedInstance = nil;
 
 - (void) sendPicture:(long long)clientId token:(NSString *)token recordScheduleToken:(NSString *)recordScheduleToken recordedCheck:(BOOL)recordedCheck file:(NSData *)file timestamp:(long long)timestamp success:(void (^)(GRPicture *picture))success fail:(void (^)(NSInteger status, NSError *error))fail {
     
-    NSString *path = @"picture";
+    NSString *path = @"v2/picture";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
@@ -84,7 +84,7 @@ static GRClientService *sharedInstance = nil;
         [body setObject:recordScheduleToken forKey:@"recordScheduleToken"];
     }
     if(file){
-        [body setObject:[GRMultipartFile multipartFileWithFileName:[NSString stringWithFormat:@"%lld.jpg", timestamp] contentType:@"image/jpeg" body:file] forKey:@"file"];
+        [body setObject:[GBMultipartFile multipartFileWithFileName:[NSString stringWithFormat:@"%lld.jpg", timestamp] contentType:@"image/jpeg" body:file] forKey:@"file"];
     }
     if(recordedCheck) {
         [body setObject:@(recordedCheck) forKey:@"recordedCheck"];
@@ -92,13 +92,13 @@ static GRClientService *sharedInstance = nil;
     
     [body setObject:[NSString stringWithFormat:@"%lld", timestamp] forKey:@"timestamp"];
 
-    GRHttpRequest *httpRequest = [GRHttpRequest instanceWithRequestMethod:GRRequestMethodPost version:@"v2" path:path query:nil body:body contentType:GRContentTypeMultipart];
-    [self httpRequest:httpRequest success:^(GRHttpResponse *httpResponse) {
+    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body contentType:GRContentTypeMultipart];
+    [self httpRequest:httpRequest success:^(GBHttpResponse *httpResponse) {
         if (success) {
             GRPicture *picture = [GRPicture domainWithDictionary:httpResponse.body];
             success(picture);
         }
-    } fail:^(GRHttpResponse *httpResponse) {
+    } fail:^(GBHttpResponse *httpResponse) {
         if (fail) {
             fail(httpResponse.httpUrlResponse.statusCode, httpResponse.error);
         }

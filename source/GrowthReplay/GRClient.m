@@ -7,7 +7,7 @@
 //
 
 #import "GRClient.h"
-#import "GRUtils.h"
+#import "GBUtils.h"
 #import "GRConfiguration.h"
 
 @implementation GRClient

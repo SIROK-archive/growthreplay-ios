@@ -11,6 +11,8 @@
 
 @interface GrowthReplay : NSObject
 
++ (GrowthReplay *) sharedInstance;
+
 + (void)initializeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret debug:(BOOL)debug;
 
 + (void)setTag:(NSString *)name value:(NSString *)value;
@@ -22,5 +24,7 @@
 + (void)stop;
 
 + (void) setSpot:(NSString *)spot;
+
+- (GBHttpClient *)httpClient;
 
 @end

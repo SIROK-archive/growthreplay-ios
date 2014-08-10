@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GRHttpClient.h"
+#import "GBHttpClient.h"
 
 @interface GRService : NSObject
 
-- (void)httpRequest:(GRHttpRequest *)httpRequest success:(void(^) (GRHttpResponse * httpResponse)) success fail:(void(^) (GRHttpResponse * httpResponse))fail;
+- (void)httpRequest:(GBHttpRequest *)httpRequest success:(void(^) (GBHttpResponse * httpResponse)) success fail:(void(^) (GBHttpResponse * httpResponse))fail;
 
 @end

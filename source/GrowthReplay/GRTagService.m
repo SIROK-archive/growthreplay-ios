@@ -7,7 +7,7 @@
 //
 
 #import "GRTagService.h"
-#import "GRUtils.h"
+#import "GBUtils.h"
 
 static GRTagService *sharedInstance = nil;
 
@@ -24,7 +24,7 @@ static GRTagService *sharedInstance = nil;
 
 - (void) setTag:(long long)clientId token:(NSString *)token name:(NSString *)name value:(NSString *)value success:(void (^)(void))success fail:(void (^)(NSInteger, NSError *))fail {
 
-    NSString *path = @"tag";
+    NSString *path = @"v1/tag";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
@@ -40,12 +40,12 @@ static GRTagService *sharedInstance = nil;
         [body setObject:value forKey:@"value"];
     }
 
-    GRHttpRequest *httpRequest = [GRHttpRequest instanceWithRequestMethod:GRRequestMethodPost version:@"v1" path:path query:nil body:body];
-    [self httpRequest:httpRequest success:^(GRHttpResponse *httpResponse){
+    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body];
+    [self httpRequest:httpRequest success:^(GBHttpResponse *httpResponse){
         if (success) {
             success();
         }
-    } fail:^(GRHttpResponse *httpResponse) {
+    } fail:^(GBHttpResponse *httpResponse) {
         if (fail) {
             fail(httpResponse.httpUrlResponse.statusCode, httpResponse.error);
         }
