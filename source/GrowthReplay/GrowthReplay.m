@@ -113,7 +113,16 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     self.applicationId = newApplicationId;
     self.credentialId = newCredentialId;
     
-    [self authorize];
+    [GrowthbeatCore initializeWithApplicationId:applicationId credentialId:credentialId];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        GBClient *growthbeatClient = [[GrowthbeatCore sharedInstance] waitClient];
+        self.client = [self loadClient];
+        if (self.client && self.client.growthbeatClientId && ![self.client.growthbeatClientId isEqualToString:growthbeatClient.id]) {
+            // TODO clear client
+        }
+        [self authorize];
+    });
     
 }
 

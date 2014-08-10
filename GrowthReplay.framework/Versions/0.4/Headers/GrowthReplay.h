@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GrowthbeatCore.h"
 
 @interface GrowthReplay : NSObject
 
-+ (void)initializeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret debug:(BOOL)debug;
++ (GrowthReplay *) sharedInstance;
+
++ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
 
 + (void)setTag:(NSString *)name value:(NSString *)value;
 
@@ -21,5 +24,9 @@
 + (void)stop;
 
 + (void) setSpot:(NSString *)spot;
+
+- (GBLogger *)logger;
+- (GBHttpClient *)httpClient;
+- (GBPreference *)preference;
 
 @end

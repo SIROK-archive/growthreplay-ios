@@ -20,7 +20,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [GrowthReplay initializeWithApplicationId:1 secret:@"gBf0xC8oMugPRCtqOYsacAYinkmIDRwp" debug:true];
+    [GrowthReplay initializeWithApplicationId:@"dy6VlRMnN3juhW9L" credentialId:@"NuvkVhQtRDG2nrNeDzHXzZO5c6j0Xu5t"];
     [GrowthReplay start];
     
     return YES;
