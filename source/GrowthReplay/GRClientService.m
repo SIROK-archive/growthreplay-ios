@@ -7,7 +7,7 @@
 //
 
 #import "GRClientService.h"
-#import "GRUtils.h"
+#import "GBUtils.h"
 #import "GRMultipartFile.h"
 
 static GRClientService *sharedInstance = nil;

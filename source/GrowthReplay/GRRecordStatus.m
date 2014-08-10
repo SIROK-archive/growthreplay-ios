@@ -1,12 +1,12 @@
 //
-//  GRRecordStatusUtils.m
+//  GRRecordStatus.m
 //  replay
 //
 //  Created by A13048 on 2014/01/28.
 //  Copyright (c) 2014年 SIROK. All rights reserved.
 //
 
-#import "GRRecordStatusUtils.h"
+#import "GRRecordStatus.h"
 
 NSString *NSStringFromGRRecordStatus(GRRecordStatus status){
 

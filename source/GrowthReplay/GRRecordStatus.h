@@ -14,3 +14,6 @@ typedef NS_ENUM (NSInteger, GRRecordStatus) {
     GRRecordStatusAdded,
     GRRecordStatusAlready,
 };
+
+NSString *NSStringFromGRRecordStatus(GRRecordStatus status);
+GRRecordStatus GRRecordStatusFromNSString(NSString *statusString);

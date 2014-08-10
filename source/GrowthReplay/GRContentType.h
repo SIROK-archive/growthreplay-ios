@@ -14,3 +14,6 @@ typedef NS_ENUM (NSUInteger, GRContentType) {
     GRContentTypeMultipart,
     GRContentTypeJson
 };
+
+NSString *NSStringFromContnetType(GRContentType contentType);
+GRContentType ContentTypeFromNSString(NSString *contentTypeString);
