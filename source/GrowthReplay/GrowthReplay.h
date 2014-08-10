@@ -25,6 +25,8 @@
 
 + (void) setSpot:(NSString *)spot;
 
+- (GBLogger *)logger;
 - (GBHttpClient *)httpClient;
+- (GBPreference *)preference;
 
 @end

@@ -17,7 +17,6 @@
 		C16AB74C195951AD0050EA04 /* GRDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB739195951AD0050EA04 /* GRDomain.m */; };
 		C16AB752195951AD0050EA04 /* GrowthReplay.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB73F195951AD0050EA04 /* GrowthReplay.m */; };
 		C16AB753195951AD0050EA04 /* GRPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB740195951AD0050EA04 /* GRPicture.m */; };
-		C16AB754195951AD0050EA04 /* GRPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB741195951AD0050EA04 /* GRPreference.m */; };
 		C16AB755195951AD0050EA04 /* GRRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB742195951AD0050EA04 /* GRRecorder.m */; };
 		C16AB756195951AD0050EA04 /* GRRecordStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB743195951AD0050EA04 /* GRRecordStatus.m */; };
 		C16AB758195951AD0050EA04 /* GRService.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB745195951AD0050EA04 /* GRService.m */; };
@@ -28,7 +27,6 @@
 		C16AB776195951B70050EA04 /* GRDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB760195951B70050EA04 /* GRDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB77C195951B70050EA04 /* GrowthReplay.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB766195951B70050EA04 /* GrowthReplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB77D195951B70050EA04 /* GRPicture.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB767195951B70050EA04 /* GRPicture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C16AB77E195951B70050EA04 /* GRPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB768195951B70050EA04 /* GRPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB77F195951B70050EA04 /* GRRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB769195951B70050EA04 /* GRRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB780195951B70050EA04 /* GRRecordStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76A195951B70050EA04 /* GRRecordStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB783195951B70050EA04 /* GRService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76D195951B70050EA04 /* GRService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,7 +48,6 @@
 		C16AB739195951AD0050EA04 /* GRDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDomain.m; sourceTree = "<group>"; };
 		C16AB73F195951AD0050EA04 /* GrowthReplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthReplay.m; sourceTree = "<group>"; };
 		C16AB740195951AD0050EA04 /* GRPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPicture.m; sourceTree = "<group>"; };
-		C16AB741195951AD0050EA04 /* GRPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPreference.m; sourceTree = "<group>"; };
 		C16AB742195951AD0050EA04 /* GRRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRRecorder.m; sourceTree = "<group>"; };
 		C16AB743195951AD0050EA04 /* GRRecordStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRRecordStatus.m; sourceTree = "<group>"; };
 		C16AB745195951AD0050EA04 /* GRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRService.m; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 		C16AB760195951B70050EA04 /* GRDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDomain.h; sourceTree = "<group>"; };
 		C16AB766195951B70050EA04 /* GrowthReplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthReplay.h; sourceTree = "<group>"; };
 		C16AB767195951B70050EA04 /* GRPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPicture.h; sourceTree = "<group>"; };
-		C16AB768195951B70050EA04 /* GRPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPreference.h; sourceTree = "<group>"; };
 		C16AB769195951B70050EA04 /* GRRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRRecorder.h; sourceTree = "<group>"; };
 		C16AB76A195951B70050EA04 /* GRRecordStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRRecordStatus.h; sourceTree = "<group>"; };
 		C16AB76D195951B70050EA04 /* GRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRService.h; sourceTree = "<group>"; };
@@ -91,7 +87,6 @@
 				C16AB760195951B70050EA04 /* GRDomain.h */,
 				C16AB766195951B70050EA04 /* GrowthReplay.h */,
 				C16AB767195951B70050EA04 /* GRPicture.h */,
-				C16AB768195951B70050EA04 /* GRPreference.h */,
 				C16AB769195951B70050EA04 /* GRRecorder.h */,
 				C16AB76A195951B70050EA04 /* GRRecordStatus.h */,
 				C16AB76D195951B70050EA04 /* GRService.h */,
@@ -109,7 +104,6 @@
 				C16AB739195951AD0050EA04 /* GRDomain.m */,
 				C16AB73F195951AD0050EA04 /* GrowthReplay.m */,
 				C16AB740195951AD0050EA04 /* GRPicture.m */,
-				C16AB741195951AD0050EA04 /* GRPreference.m */,
 				C16AB742195951AD0050EA04 /* GRRecorder.m */,
 				C16AB743195951AD0050EA04 /* GRRecordStatus.m */,
 				C16AB745195951AD0050EA04 /* GRService.m */,
@@ -178,7 +172,6 @@
 				C16AB77F195951B70050EA04 /* GRRecorder.h in Headers */,
 				C16AB780195951B70050EA04 /* GRRecordStatus.h in Headers */,
 				C16AB771195951B70050EA04 /* GRClientService.h in Headers */,
-				C16AB77E195951B70050EA04 /* GRPreference.h in Headers */,
 				C16AB77D195951B70050EA04 /* GRPicture.h in Headers */,
 				C16AB784195951B70050EA04 /* GRTagService.h in Headers */,
 				C16AB770195951B70050EA04 /* GRClient.h in Headers */,
@@ -272,7 +265,6 @@
 				C16AB755195951AD0050EA04 /* GRRecorder.m in Sources */,
 				C16AB747195951AD0050EA04 /* GRClient.m in Sources */,
 				C16AB759195951AD0050EA04 /* GRTagService.m in Sources */,
-				C16AB754195951AD0050EA04 /* GRPreference.m in Sources */,
 				C16AB758195951AD0050EA04 /* GRService.m in Sources */,
 				C16AB74C195951AD0050EA04 /* GRDomain.m in Sources */,
 				C16AB756195951AD0050EA04 /* GRRecordStatus.m in Sources */,

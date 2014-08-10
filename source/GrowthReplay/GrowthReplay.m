@@ -11,10 +11,10 @@
 #import "GRClientService.h"
 #import "GRTagService.h"
 #import "GRRecorder.h"
-#import "GRPreference.h"
 
 static GrowthReplay *sharedInstance = nil;
 static NSString *const kGRBaseUrl = @"https://api.growthreplay.com/";
+static NSString *const kGRPreferenceFileName = @"growthreplay-preferences";
 static NSString *const kGRPreferenceClientKey = @"client";
 static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
@@ -22,6 +22,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
     GBLogger *logger;
     GBHttpClient *httpClient;
+    GBPreference *preference;
     
     NSInteger applicationId;
     NSString *secret;
@@ -36,6 +37,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @property (nonatomic) GBLogger *logger;
 @property (nonatomic) GBHttpClient *httpClient;
+@property (nonatomic) GBPreference *preference;
 @property (nonatomic) NSInteger applicationId;
 @property (nonatomic) NSString *secret;
 @property (nonatomic) BOOL debug;
@@ -51,6 +53,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @synthesize logger;
 @synthesize httpClient;
+@synthesize preference;
 @synthesize applicationId;
 @synthesize secret;
 @synthesize debug;
@@ -101,6 +104,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     if (self) {
         self.logger = [[GBLogger alloc] initWithTag:@"GrowthReplay"];
         self.httpClient = [[GBHttpClient alloc] initWithBaseUrl:[NSURL URLWithString:kGRBaseUrl]];
+        self.preference = [[GBPreference alloc] initWithFileName:kGRPreferenceFileName];
         self.recorder = [[GRRecorder alloc] init];
         self.recordedCheck = YES;
     }
@@ -241,7 +245,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 - (GRClient *) loadClient {
     
-    NSData *data = [[GRPreference sharedInstance] objectForKey:kGRPreferenceClientKey];
+    NSData *data = [preference objectForKey:kGRPreferenceClientKey];
     
     if (!data) {
         return nil;
@@ -261,7 +265,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newClient];
-    [[GRPreference sharedInstance] setObject:data forKey:kGRPreferenceClientKey];
+    [preference setObject:data forKey:kGRPreferenceClientKey];
     
 }
 
