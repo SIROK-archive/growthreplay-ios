@@ -23,16 +23,16 @@ static GRClientService *sharedInstance = nil;
     }
 }
 
-- (void) authorizeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
+- (void) authorizeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
 
     NSString *path = @"v2/authorize";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (applicationId) {
-        [body setObject:@(applicationId) forKey:@"applicationId"];
+        [body setObject:applicationId forKey:@"applicationId"];
     }
-    if (secret) {
-        [body setObject:secret forKey:@"secret"];
+    if (credentialId) {
+        [body setObject:credentialId forKey:@"credentialId"];
     }
 
     [body setObject:client ? @(client.id):[NSNull null] forKey:@"clientId"];

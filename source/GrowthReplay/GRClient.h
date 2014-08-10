@@ -13,6 +13,7 @@
 @interface GRClient : GRDomain<NSCoding> {
 
     long long id;
+    NSString *growthbeatClientId;
     NSInteger applicationId;
     NSString *token;
     BOOL recorded;
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic) long long id;
+@property (nonatomic) NSString *growthbeatClientId;
 @property (nonatomic) NSInteger applicationId;
 @property (nonatomic) NSString *token;
 @property (nonatomic) BOOL recorded;

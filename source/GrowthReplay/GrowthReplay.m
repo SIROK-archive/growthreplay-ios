@@ -24,9 +24,8 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     GBHttpClient *httpClient;
     GBPreference *preference;
     
-    NSInteger applicationId;
-    NSString *secret;
-    BOOL debug;
+    NSString *applicationId;
+    NSString *credentialId;
     GRClient *client;
     BOOL registeringClient;
     GRRecorder *recorder;
@@ -38,9 +37,8 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 @property (nonatomic) GBLogger *logger;
 @property (nonatomic) GBHttpClient *httpClient;
 @property (nonatomic) GBPreference *preference;
-@property (nonatomic) NSInteger applicationId;
-@property (nonatomic) NSString *secret;
-@property (nonatomic) BOOL debug;
+@property (nonatomic) NSString *applicationId;
+@property (nonatomic) NSString *credentialId;
 @property (nonatomic) GRClient *client;
 @property (nonatomic) BOOL registeringClient;
 @property (nonatomic) GRRecorder *recorder;
@@ -55,8 +53,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 @synthesize httpClient;
 @synthesize preference;
 @synthesize applicationId;
-@synthesize secret;
-@synthesize debug;
+@synthesize credentialId;
 @synthesize client;
 @synthesize registeringClient;
 @synthesize recorder;
@@ -75,8 +72,8 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
 }
 
-+ (void) initializeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret debug:(BOOL)debug {
-    [[GrowthReplay sharedInstance] initializeWithApplicationId:applicationId secret:secret debug:debug];
++ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId {
+    [[GrowthReplay sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId];
 }
 
 + (void) setTag:(NSString *)name value:(NSString *)value {
@@ -111,11 +108,10 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     return self;
 }
 
-- (void) initializeWithApplicationId:(NSInteger)newApplicationId secret:(NSString *)newSecret debug:(BOOL)newDebug {
+- (void) initializeWithApplicationId:(NSString *)newApplicationId credentialId:(NSString *)newCredentialId {
     
     self.applicationId = newApplicationId;
-    self.secret = newSecret;
-    self.debug = newDebug;
+    self.credentialId = newCredentialId;
     
     [self authorize];
     
@@ -133,7 +129,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     self.registeringClient = YES;
     [logger info:@"Authorize client... (applicationId: %d)", applicationId];
     
-    [[GRClientService sharedInstance] authorizeWithApplicationId:self.applicationId secret:self.secret client:[self loadClient] success:^(GRClient *authorizedClient){
+    [[GRClientService sharedInstance] authorizeWithApplicationId:self.applicationId credentialId:self.credentialId client:[self loadClient] success:^(GRClient *authorizedClient){
         
         self.client = authorizedClient;
         self.registeringClient = NO;
@@ -251,11 +247,8 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
         return nil;
     }
     
-    GRClient *refClient = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if (refClient.applicationId != self.applicationId)
-        return nil;
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
-    return refClient;
 }
 
 - (void) savedClient:(GRClient *)newClient {

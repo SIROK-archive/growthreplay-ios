@@ -13,7 +13,7 @@
 
 + (GrowthReplay *) sharedInstance;
 
-+ (void)initializeWithApplicationId:(NSInteger)applicationId secret:(NSString *)secret debug:(BOOL)debug;
++ (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
 
 + (void)setTag:(NSString *)name value:(NSString *)value;
 
