@@ -15,7 +15,6 @@
 		C16AB748195951AD0050EA04 /* GRClientService.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB735195951AD0050EA04 /* GRClientService.m */; };
 		C16AB749195951AD0050EA04 /* GRConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB736195951AD0050EA04 /* GRConfiguration.m */; };
 		C16AB74A195951AD0050EA04 /* GRContentTypeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB737195951AD0050EA04 /* GRContentTypeUtils.m */; };
-		C16AB74B195951AD0050EA04 /* GRDeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB738195951AD0050EA04 /* GRDeviceUtils.m */; };
 		C16AB74C195951AD0050EA04 /* GRDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB739195951AD0050EA04 /* GRDomain.m */; };
 		C16AB74D195951AD0050EA04 /* GRHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB73A195951AD0050EA04 /* GRHttpClient.m */; };
 		C16AB74E195951AD0050EA04 /* GRHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB73B195951AD0050EA04 /* GRHttpRequest.m */; };
@@ -35,7 +34,6 @@
 		C16AB772195951B70050EA04 /* GRConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75C195951B70050EA04 /* GRConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB773195951B70050EA04 /* GRContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75D195951B70050EA04 /* GRContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB774195951B70050EA04 /* GRContentTypeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C16AB775195951B70050EA04 /* GRDeviceUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75F195951B70050EA04 /* GRDeviceUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB776195951B70050EA04 /* GRDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB760195951B70050EA04 /* GRDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB777195951B70050EA04 /* GRHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB761195951B70050EA04 /* GRHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB778195951B70050EA04 /* GRHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB762195951B70050EA04 /* GRHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,7 +65,6 @@
 		C16AB735195951AD0050EA04 /* GRClientService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRClientService.m; sourceTree = "<group>"; };
 		C16AB736195951AD0050EA04 /* GRConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRConfiguration.m; sourceTree = "<group>"; };
 		C16AB737195951AD0050EA04 /* GRContentTypeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRContentTypeUtils.m; sourceTree = "<group>"; };
-		C16AB738195951AD0050EA04 /* GRDeviceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDeviceUtils.m; sourceTree = "<group>"; };
 		C16AB739195951AD0050EA04 /* GRDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDomain.m; sourceTree = "<group>"; };
 		C16AB73A195951AD0050EA04 /* GRHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRHttpClient.m; sourceTree = "<group>"; };
 		C16AB73B195951AD0050EA04 /* GRHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRHttpRequest.m; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		C16AB75C195951B70050EA04 /* GRConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRConfiguration.h; sourceTree = "<group>"; };
 		C16AB75D195951B70050EA04 /* GRContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRContentType.h; sourceTree = "<group>"; };
 		C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRContentTypeUtils.h; sourceTree = "<group>"; };
-		C16AB75F195951B70050EA04 /* GRDeviceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDeviceUtils.h; sourceTree = "<group>"; };
 		C16AB760195951B70050EA04 /* GRDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDomain.h; sourceTree = "<group>"; };
 		C16AB761195951B70050EA04 /* GRHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRHttpClient.h; sourceTree = "<group>"; };
 		C16AB762195951B70050EA04 /* GRHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRHttpRequest.h; sourceTree = "<group>"; };
@@ -128,7 +124,6 @@
 				C16AB75C195951B70050EA04 /* GRConfiguration.h */,
 				C16AB75D195951B70050EA04 /* GRContentType.h */,
 				C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */,
-				C16AB75F195951B70050EA04 /* GRDeviceUtils.h */,
 				C16AB760195951B70050EA04 /* GRDomain.h */,
 				C16AB761195951B70050EA04 /* GRHttpClient.h */,
 				C16AB762195951B70050EA04 /* GRHttpRequest.h */,
@@ -156,7 +151,6 @@
 				C16AB735195951AD0050EA04 /* GRClientService.m */,
 				C16AB736195951AD0050EA04 /* GRConfiguration.m */,
 				C16AB737195951AD0050EA04 /* GRContentTypeUtils.m */,
-				C16AB738195951AD0050EA04 /* GRDeviceUtils.m */,
 				C16AB739195951AD0050EA04 /* GRDomain.m */,
 				C16AB73A195951AD0050EA04 /* GRHttpClient.m */,
 				C16AB73B195951AD0050EA04 /* GRHttpRequest.m */,
@@ -248,7 +242,6 @@
 				C16AB777195951B70050EA04 /* GRHttpClient.h in Headers */,
 				C16AB783195951B70050EA04 /* GRService.h in Headers */,
 				C16AB785195951B70050EA04 /* GRUtils.h in Headers */,
-				C16AB775195951B70050EA04 /* GRDeviceUtils.h in Headers */,
 				C16AB774195951B70050EA04 /* GRContentTypeUtils.h in Headers */,
 				C16AB77B195951B70050EA04 /* GRMultipartFile.h in Headers */,
 				C16AB773195951B70050EA04 /* GRContentType.h in Headers */,
@@ -345,7 +338,6 @@
 				C16AB74A195951AD0050EA04 /* GRContentTypeUtils.m in Sources */,
 				C16AB754195951AD0050EA04 /* GRPreference.m in Sources */,
 				C16AB758195951AD0050EA04 /* GRService.m in Sources */,
-				C16AB74B195951AD0050EA04 /* GRDeviceUtils.m in Sources */,
 				C16AB74E195951AD0050EA04 /* GRHttpRequest.m in Sources */,
 				C16AB74C195951AD0050EA04 /* GRDomain.m in Sources */,
 				C16AB751195951AD0050EA04 /* GRMultipartFile.m in Sources */,

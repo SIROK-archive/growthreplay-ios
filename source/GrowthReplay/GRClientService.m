@@ -38,19 +38,19 @@ static GRClientService *sharedInstance = nil;
     [body setObject:client ? @(client.id):[NSNull null] forKey:@"clientId"];
     [body setObject:client ? client.token:[NSNull null] forKey:@"token"];
 
-    NSString *network = [[GRDeviceUtils sharedInstance] networkIsWiFi] ? @"wifi" : @"carrier";
+    NSString *network = [GBDeviceUtils connectedToWiFi] ? @"wifi" : @"carrier";
     [body setObject:network forKey:@"network"];
 
-    float deviceVersion = [[GRDeviceUtils sharedInstance] getCurrentDeviceVersion];
+    float deviceVersion = [GBDeviceUtils getCurrentDeviceVersion];
     [body setObject:@(deviceVersion) forKey:@"version"];
 
-    unsigned int memory = [[GRDeviceUtils sharedInstance] getFreeMemory];
+    unsigned int memory = [GBDeviceUtils getAvailableMemory];
     [body setObject:@(memory) forKey:@"memory"];
 
-    uint64_t cpuUsage = [[GRDeviceUtils sharedInstance] getCPUUsage];
+    uint64_t cpuUsage = [GBDeviceUtils getCPUUsage];
     [body setObject:@(cpuUsage) forKey:@"cpu"];
 
-    NSString *model = [[GRDeviceUtils sharedInstance] getPlatformString];
+    NSString *model = [GBDeviceUtils getPlatformString];
     [body setObject:model forKey:@"model"];
     
     [body setObject:@"ios" forKey:@"os"];

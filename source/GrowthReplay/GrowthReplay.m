@@ -163,15 +163,15 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 - (void) setDeviceTags {
     [self setTag:@"os" value:@"ios"];
-    [self setTag:@"deviceVersion" value:[NSString stringWithFormat:@"%g", [[GRDeviceUtils sharedInstance] getCurrentDeviceVersion]]];
-    [self setTag:@"deviceModel" value:[[GRDeviceUtils sharedInstance] getPlatformString]];
+    [self setTag:@"deviceVersion" value:[NSString stringWithFormat:@"%g", [GBDeviceUtils getCurrentDeviceVersion]]];
+    [self setTag:@"deviceModel" value:[GBDeviceUtils getPlatformString]];
     [self setTag:@"appVersion" value:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
     [self setTag:@"sdkVersion" value:@"0.3"];
 }
 
 - (void) sendPicture:(NSData *)data date:(NSDate *)date {
     
-    if (![[GRDeviceUtils sharedInstance] networkIsWiFi]) {
+    if (![GBDeviceUtils connectedToWiFi]) {
         return;
     }
     
