@@ -20,6 +20,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @interface GrowthReplay () {
     
+    GBLogger *logger;
     GBHttpClient *httpClient;
     
     NSInteger applicationId;
@@ -33,6 +34,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
 }
 
+@property (nonatomic) GBLogger *logger;
 @property (nonatomic) GBHttpClient *httpClient;
 @property (nonatomic) NSInteger applicationId;
 @property (nonatomic) NSString *secret;
@@ -47,6 +49,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 @implementation GrowthReplay
 
+@synthesize logger;
 @synthesize httpClient;
 @synthesize applicationId;
 @synthesize secret;
@@ -96,6 +99,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 - (id) init {
     self = [super init];
     if (self) {
+        self.logger = [[GBLogger alloc] initWithTag:@"GrowthReplay"];
         self.httpClient = [[GBHttpClient alloc] initWithBaseUrl:[NSURL URLWithString:kGRBaseUrl]];
         self.recorder = [[GRRecorder alloc] init];
         self.recordedCheck = YES;
@@ -123,20 +127,20 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
     
     self.registeringClient = YES;
-    [self log:@"Authorize client... (applicationId: %d)", applicationId];
+    [logger info:@"Authorize client... (applicationId: %d)", applicationId];
     
     [[GRClientService sharedInstance] authorizeWithApplicationId:self.applicationId secret:self.secret client:[self loadClient] success:^(GRClient *authorizedClient){
         
         self.client = authorizedClient;
         self.registeringClient = NO;
         self.pictureLimit = authorizedClient.configuration.numberOfRemaining;
-        [self log:@"Authorize success. (clientId %ld, picture %d)", self.client.id, self.pictureLimit];
+        [logger info:@"Authorize success. (clientId %ld, picture %d)", self.client.id, self.pictureLimit];
         [self savedClient:authorizedClient];
         
         if (client.recorded || self.pictureLimit > 0) {
-            [self log:@"This device is selected. "];
+            [logger info:@"This device is selected. "];
             
-            [self log:@"start recorder term:%d", authorizedClient.configuration.recordTerm];
+            [logger info:@"start recorder term:%d", authorizedClient.configuration.recordTerm];
             [self.recorder startWithConfiguration:client.configuration callback:^(NSData *data, NSDate *date) {
                 [self sendPicture:data date:date];
             }];
@@ -147,7 +151,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
         }
         
     } fail:^(NSInteger status, NSError *error){
-        [self log:@"authorize fail (%@).", error.description];
+        [logger info:@"authorize fail (%@).", error.description];
         self.registeringClient = NO;
     }];
     
@@ -157,9 +161,9 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
     [self runAfterRegister:^{
         [[GRTagService sharedInstance] setTag:self.client.id token:self.client.token name:name value:value success:^(){
-            [self log:@"tag save success. "];
+            [logger info:@"tag save success. "];
         } fail:^(NSInteger status, NSError *error){
-            [self log:@"tag save fail. "];
+            [logger info:@"tag save fail. "];
         }];
     }];
     
@@ -180,12 +184,12 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
     
     if (!data) {
-        [self log:@"send data is nil"];
+        [logger info:@"send data is nil"];
         return;
     }
     
     if (self.pictureLimit <= 0) {
-        [self log:@"limit picture size."];
+        [logger info:@"limit picture size."];
         [self.recorder stop];
         return ;
     }
@@ -199,18 +203,18 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
         recordedCheck = false;
         if (picture.status) {
             self.pictureLimit--;
-            [self log:@"send picture success. (picture limit size %d)", self.pictureLimit];
+            [logger info:@"send picture success. (picture limit size %d)", self.pictureLimit];
         } else {
-            [self log:@"save picture failure.."];
+            [logger info:@"save picture failure.."];
         }
         
         if (!picture.continuation || self.pictureLimit <= 0) {
-            [self log:@"limit picture size."];
+            [logger info:@"limit picture size."];
             [self.recorder stop];
         }
         
     } fail:^(NSInteger status, NSError *error) {
-        [self log:@"send picture fail. (%@)", error.description];
+        [logger info:@"send picture fail. (%@)", error.description];
     }];
     
 }
@@ -218,14 +222,14 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 - (void) start {
     if (self.recorder) {
         [self.recorder setIsRec:YES];
-        [self log:@"Start to send picture."];
+        [logger info:@"Start to send picture."];
     }
 }
 
 - (void) stop {
     if (self.recorder) {
         [self.recorder setIsRec:NO];
-        [self log:@"Stopped to send picture."];
+        [logger info:@"Stopped to send picture."];
     }
 }
 
@@ -258,21 +262,6 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newClient];
     [[GRPreference sharedInstance] setObject:data forKey:kGRPreferenceClientKey];
-    
-}
-
-- (void) log:(NSString *)format, ...{
-    
-    if (!debug) {
-        return;
-    }
-    
-    va_list args;
-    
-    va_start(args, format);
-    
-    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
-    NSLog(@"GrowthReplay - %@", message);
     
 }
 
