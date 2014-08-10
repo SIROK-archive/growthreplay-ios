@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B219C26718A23D4800D4E65F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B219C26618A23D4800D4E65F /* SystemConfiguration.framework */; };
+		B2421F17199797B000E91C23 /* GrowthbeatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2421F16199797B000E91C23 /* GrowthbeatCore.framework */; };
 		C15FEBBC18974FE400AD7E25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15FEBBB18974FE400AD7E25 /* Foundation.framework */; };
 		C15FEBC218974FE400AD7E25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C15FEBC018974FE400AD7E25 /* InfoPlist.strings */; };
 		C16AB747195951AD0050EA04 /* GRClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB734195951AD0050EA04 /* GRClient.m */; };
@@ -29,32 +30,33 @@
 		C16AB757195951AD0050EA04 /* GRRequestMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB744195951AD0050EA04 /* GRRequestMethod.m */; };
 		C16AB758195951AD0050EA04 /* GRService.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB745195951AD0050EA04 /* GRService.m */; };
 		C16AB759195951AD0050EA04 /* GRTagService.m in Sources */ = {isa = PBXBuildFile; fileRef = C16AB746195951AD0050EA04 /* GRTagService.m */; };
-		C16AB770195951B70050EA04 /* GRClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75A195951B70050EA04 /* GRClient.h */; };
-		C16AB771195951B70050EA04 /* GRClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75B195951B70050EA04 /* GRClientService.h */; };
-		C16AB772195951B70050EA04 /* GRConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75C195951B70050EA04 /* GRConfiguration.h */; };
-		C16AB773195951B70050EA04 /* GRContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75D195951B70050EA04 /* GRContentType.h */; };
-		C16AB774195951B70050EA04 /* GRContentTypeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */; };
-		C16AB775195951B70050EA04 /* GRDeviceUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75F195951B70050EA04 /* GRDeviceUtils.h */; };
-		C16AB776195951B70050EA04 /* GRDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB760195951B70050EA04 /* GRDomain.h */; };
-		C16AB777195951B70050EA04 /* GRHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB761195951B70050EA04 /* GRHttpClient.h */; };
-		C16AB778195951B70050EA04 /* GRHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB762195951B70050EA04 /* GRHttpRequest.h */; };
-		C16AB779195951B70050EA04 /* GRHttpResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB763195951B70050EA04 /* GRHttpResponse.h */; };
-		C16AB77A195951B70050EA04 /* GRHttpUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB764195951B70050EA04 /* GRHttpUtils.h */; };
-		C16AB77B195951B70050EA04 /* GRMultipartFile.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB765195951B70050EA04 /* GRMultipartFile.h */; };
+		C16AB770195951B70050EA04 /* GRClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75A195951B70050EA04 /* GRClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB771195951B70050EA04 /* GRClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75B195951B70050EA04 /* GRClientService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB772195951B70050EA04 /* GRConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75C195951B70050EA04 /* GRConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB773195951B70050EA04 /* GRContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75D195951B70050EA04 /* GRContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB774195951B70050EA04 /* GRContentTypeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB775195951B70050EA04 /* GRDeviceUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB75F195951B70050EA04 /* GRDeviceUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB776195951B70050EA04 /* GRDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB760195951B70050EA04 /* GRDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB777195951B70050EA04 /* GRHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB761195951B70050EA04 /* GRHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB778195951B70050EA04 /* GRHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB762195951B70050EA04 /* GRHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB779195951B70050EA04 /* GRHttpResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB763195951B70050EA04 /* GRHttpResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB77A195951B70050EA04 /* GRHttpUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB764195951B70050EA04 /* GRHttpUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB77B195951B70050EA04 /* GRMultipartFile.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB765195951B70050EA04 /* GRMultipartFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C16AB77C195951B70050EA04 /* GrowthReplay.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB766195951B70050EA04 /* GrowthReplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C16AB77D195951B70050EA04 /* GRPicture.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB767195951B70050EA04 /* GRPicture.h */; };
-		C16AB77E195951B70050EA04 /* GRPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB768195951B70050EA04 /* GRPreference.h */; };
-		C16AB77F195951B70050EA04 /* GRRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB769195951B70050EA04 /* GRRecorder.h */; };
-		C16AB780195951B70050EA04 /* GRRecordStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76A195951B70050EA04 /* GRRecordStatus.h */; };
-		C16AB781195951B70050EA04 /* GRRecordStatusUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76B195951B70050EA04 /* GRRecordStatusUtils.h */; };
-		C16AB782195951B70050EA04 /* GRRequestMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76C195951B70050EA04 /* GRRequestMethod.h */; };
-		C16AB783195951B70050EA04 /* GRService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76D195951B70050EA04 /* GRService.h */; };
-		C16AB784195951B70050EA04 /* GRTagService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76E195951B70050EA04 /* GRTagService.h */; };
-		C16AB785195951B70050EA04 /* GRUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76F195951B70050EA04 /* GRUtils.h */; };
+		C16AB77D195951B70050EA04 /* GRPicture.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB767195951B70050EA04 /* GRPicture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB77E195951B70050EA04 /* GRPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB768195951B70050EA04 /* GRPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB77F195951B70050EA04 /* GRRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB769195951B70050EA04 /* GRRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB780195951B70050EA04 /* GRRecordStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76A195951B70050EA04 /* GRRecordStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB781195951B70050EA04 /* GRRecordStatusUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76B195951B70050EA04 /* GRRecordStatusUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB782195951B70050EA04 /* GRRequestMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76C195951B70050EA04 /* GRRequestMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB783195951B70050EA04 /* GRService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76D195951B70050EA04 /* GRService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB784195951B70050EA04 /* GRTagService.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76E195951B70050EA04 /* GRTagService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C16AB785195951B70050EA04 /* GRUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C16AB76F195951B70050EA04 /* GRUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B219C26618A23D4800D4E65F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B2421F16199797B000E91C23 /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
 		C1224E7D18E42507001E02DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C15FEBB818974FE400AD7E25 /* GrowthReplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = GrowthReplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15FEBBB18974FE400AD7E25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,12 +113,68 @@
 			files = (
 				B219C26718A23D4800D4E65F /* SystemConfiguration.framework in Frameworks */,
 				C15FEBBC18974FE400AD7E25 /* Foundation.framework in Frameworks */,
+				B2421F17199797B000E91C23 /* GrowthbeatCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2421F141997973200E91C23 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				C16AB75A195951B70050EA04 /* GRClient.h */,
+				C16AB75B195951B70050EA04 /* GRClientService.h */,
+				C16AB75C195951B70050EA04 /* GRConfiguration.h */,
+				C16AB75D195951B70050EA04 /* GRContentType.h */,
+				C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */,
+				C16AB75F195951B70050EA04 /* GRDeviceUtils.h */,
+				C16AB760195951B70050EA04 /* GRDomain.h */,
+				C16AB761195951B70050EA04 /* GRHttpClient.h */,
+				C16AB762195951B70050EA04 /* GRHttpRequest.h */,
+				C16AB763195951B70050EA04 /* GRHttpResponse.h */,
+				C16AB764195951B70050EA04 /* GRHttpUtils.h */,
+				C16AB765195951B70050EA04 /* GRMultipartFile.h */,
+				C16AB766195951B70050EA04 /* GrowthReplay.h */,
+				C16AB767195951B70050EA04 /* GRPicture.h */,
+				C16AB768195951B70050EA04 /* GRPreference.h */,
+				C16AB769195951B70050EA04 /* GRRecorder.h */,
+				C16AB76A195951B70050EA04 /* GRRecordStatus.h */,
+				C16AB76B195951B70050EA04 /* GRRecordStatusUtils.h */,
+				C16AB76C195951B70050EA04 /* GRRequestMethod.h */,
+				C16AB76D195951B70050EA04 /* GRService.h */,
+				C16AB76E195951B70050EA04 /* GRTagService.h */,
+				C16AB76F195951B70050EA04 /* GRUtils.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		B2421F151997973900E91C23 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C16AB734195951AD0050EA04 /* GRClient.m */,
+				C16AB735195951AD0050EA04 /* GRClientService.m */,
+				C16AB736195951AD0050EA04 /* GRConfiguration.m */,
+				C16AB737195951AD0050EA04 /* GRContentTypeUtils.m */,
+				C16AB738195951AD0050EA04 /* GRDeviceUtils.m */,
+				C16AB739195951AD0050EA04 /* GRDomain.m */,
+				C16AB73A195951AD0050EA04 /* GRHttpClient.m */,
+				C16AB73B195951AD0050EA04 /* GRHttpRequest.m */,
+				C16AB73C195951AD0050EA04 /* GRHttpResponse.m */,
+				C16AB73D195951AD0050EA04 /* GRHttpUtils.m */,
+				C16AB73E195951AD0050EA04 /* GRMultipartFile.m */,
+				C16AB73F195951AD0050EA04 /* GrowthReplay.m */,
+				C16AB740195951AD0050EA04 /* GRPicture.m */,
+				C16AB741195951AD0050EA04 /* GRPreference.m */,
+				C16AB742195951AD0050EA04 /* GRRecorder.m */,
+				C16AB743195951AD0050EA04 /* GRRecordStatusUtils.m */,
+				C16AB744195951AD0050EA04 /* GRRequestMethod.m */,
+				C16AB745195951AD0050EA04 /* GRService.m */,
+				C16AB746195951AD0050EA04 /* GRTagService.m */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
 		C15FEBAD18974FE400AD7E25 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +195,7 @@
 		C15FEBBA18974FE400AD7E25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2421F16199797B000E91C23 /* GrowthbeatCore.framework */,
 				C1224E7D18E42507001E02DC /* QuartzCore.framework */,
 				B219C26618A23D4800D4E65F /* SystemConfiguration.framework */,
 				C15FEBBB18974FE400AD7E25 /* Foundation.framework */,
@@ -147,47 +206,8 @@
 		C15FEBBD18974FE400AD7E25 /* GrowthReplay */ = {
 			isa = PBXGroup;
 			children = (
-				C16AB75A195951B70050EA04 /* GRClient.h */,
-				C16AB734195951AD0050EA04 /* GRClient.m */,
-				C16AB75B195951B70050EA04 /* GRClientService.h */,
-				C16AB735195951AD0050EA04 /* GRClientService.m */,
-				C16AB75C195951B70050EA04 /* GRConfiguration.h */,
-				C16AB736195951AD0050EA04 /* GRConfiguration.m */,
-				C16AB75D195951B70050EA04 /* GRContentType.h */,
-				C16AB75E195951B70050EA04 /* GRContentTypeUtils.h */,
-				C16AB737195951AD0050EA04 /* GRContentTypeUtils.m */,
-				C16AB75F195951B70050EA04 /* GRDeviceUtils.h */,
-				C16AB738195951AD0050EA04 /* GRDeviceUtils.m */,
-				C16AB760195951B70050EA04 /* GRDomain.h */,
-				C16AB739195951AD0050EA04 /* GRDomain.m */,
-				C16AB761195951B70050EA04 /* GRHttpClient.h */,
-				C16AB73A195951AD0050EA04 /* GRHttpClient.m */,
-				C16AB762195951B70050EA04 /* GRHttpRequest.h */,
-				C16AB73B195951AD0050EA04 /* GRHttpRequest.m */,
-				C16AB763195951B70050EA04 /* GRHttpResponse.h */,
-				C16AB73C195951AD0050EA04 /* GRHttpResponse.m */,
-				C16AB764195951B70050EA04 /* GRHttpUtils.h */,
-				C16AB73D195951AD0050EA04 /* GRHttpUtils.m */,
-				C16AB765195951B70050EA04 /* GRMultipartFile.h */,
-				C16AB73E195951AD0050EA04 /* GRMultipartFile.m */,
-				C16AB766195951B70050EA04 /* GrowthReplay.h */,
-				C16AB73F195951AD0050EA04 /* GrowthReplay.m */,
-				C16AB767195951B70050EA04 /* GRPicture.h */,
-				C16AB740195951AD0050EA04 /* GRPicture.m */,
-				C16AB768195951B70050EA04 /* GRPreference.h */,
-				C16AB741195951AD0050EA04 /* GRPreference.m */,
-				C16AB769195951B70050EA04 /* GRRecorder.h */,
-				C16AB742195951AD0050EA04 /* GRRecorder.m */,
-				C16AB76A195951B70050EA04 /* GRRecordStatus.h */,
-				C16AB76B195951B70050EA04 /* GRRecordStatusUtils.h */,
-				C16AB743195951AD0050EA04 /* GRRecordStatusUtils.m */,
-				C16AB76C195951B70050EA04 /* GRRequestMethod.h */,
-				C16AB744195951AD0050EA04 /* GRRequestMethod.m */,
-				C16AB76D195951B70050EA04 /* GRService.h */,
-				C16AB745195951AD0050EA04 /* GRService.m */,
-				C16AB76E195951B70050EA04 /* GRTagService.h */,
-				C16AB746195951AD0050EA04 /* GRTagService.m */,
-				C16AB76F195951B70050EA04 /* GRUtils.h */,
+				B2421F141997973200E91C23 /* Headers */,
+				B2421F151997973900E91C23 /* Sources */,
 				C15FEBBE18974FE400AD7E25 /* Supporting Files */,
 			);
 			path = GrowthReplay;
@@ -433,9 +453,18 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kataoka/growthreplay-ios/submodules/growthbeat-core-ios",
+				);
 				FRAMEWORK_VERSION = 0.4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthReplay/GrowthReplay-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../submodules/growthbeat-core-ios/source/GrowthbeatCore",
+				);
 				INFOPLIST_FILE = "GrowthReplay/GrowthReplay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,9 +483,18 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kataoka/growthreplay-ios/submodules/growthbeat-core-ios",
+				);
 				FRAMEWORK_VERSION = 0.4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthReplay/GrowthReplay-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../submodules/growthbeat-core-ios/source/GrowthbeatCore",
+				);
 				INFOPLIST_FILE = "GrowthReplay/GrowthReplay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
