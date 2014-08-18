@@ -23,13 +23,13 @@ static GRClientService *sharedInstance = nil;
     }
 }
 
-- (void) authorizeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
+- (void) authorizeWithApplicationId:(NSString *)clientId credentialId:(NSString *)credentialId client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
 
     NSString *path = @"v3/authorize";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
-    if (applicationId) {
-        [body setObject:applicationId forKey:@"applicationId"];
+    if (clientId) {
+        [body setObject:clientId forKey:@"clientId"];
     }
     if (credentialId) {
         [body setObject:credentialId forKey:@"credentialId"];
@@ -52,16 +52,16 @@ static GRClientService *sharedInstance = nil;
 
 }
 
-- (void) sendPicture:(long long)clientId token:(NSString *)token recordScheduleToken:(NSString *)recordScheduleToken recordedCheck:(BOOL)recordedCheck file:(NSData *)file timestamp:(long long)timestamp success:(void (^)(GRPicture *picture))success fail:(void (^)(NSInteger status, NSError *error))fail {
+- (void) sendPicture:(NSString *)clientId credentialId:(NSString *)credentialId recordScheduleToken:(NSString *)recordScheduleToken recordedCheck:(BOOL)recordedCheck file:(NSData *)file timestamp:(long long)timestamp success:(void (^)(GRPicture *picture))success fail:(void (^)(NSInteger status, NSError *error))fail {
     
     NSString *path = @"v3/picture";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
-        [body setObject:@(clientId) forKey:@"clientId"];
+        [body setObject:clientId forKey:@"clientId"];
     }
-    if (token) {
-        [body setObject:token forKey:@"token"];
+    if (credentialId) {
+        [body setObject:credentialId forKey:@"credentialId"];
     }
     if (recordScheduleToken) {
         [body setObject:recordScheduleToken forKey:@"recordScheduleToken"];
