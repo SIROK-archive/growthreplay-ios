@@ -13,7 +13,8 @@
 #import "GRRecorder.h"
 
 static GrowthReplay *sharedInstance = nil;
-static NSString *const kGRBaseUrl = @"https://api.growthreplay.com/";
+//static NSString *const kGRBaseUrl = @"https://api.growthreplay.com/";
+static NSString *const kGRBaseUrl = @"http://api.localhost:8084/";
 static NSString *const kGRPreferenceFileName = @"growthreplay-preferences";
 static NSString *const kGRPreferenceClientKey = @"client";
 static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
