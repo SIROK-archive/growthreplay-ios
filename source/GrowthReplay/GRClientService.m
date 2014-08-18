@@ -25,7 +25,7 @@ static GRClientService *sharedInstance = nil;
 
 - (void) authorizeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
 
-    NSString *path = @"v2/authorize";
+    NSString *path = @"v3/authorize";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (applicationId) {
@@ -35,24 +35,7 @@ static GRClientService *sharedInstance = nil;
         [body setObject:credentialId forKey:@"credentialId"];
     }
 
-    [body setObject:client ? @(client.id):[NSNull null] forKey:@"clientId"];
-    [body setObject:client ? client.token:[NSNull null] forKey:@"token"];
-
-    NSString *network = [GBDeviceUtils connectedToWiFi] ? @"wifi" : @"carrier";
-    [body setObject:network forKey:@"network"];
-
-    float deviceVersion = [GBDeviceUtils getCurrentDeviceVersion];
-    [body setObject:@(deviceVersion) forKey:@"version"];
-
-    unsigned int memory = [GBDeviceUtils getAvailableMemory];
-    [body setObject:@(memory) forKey:@"memory"];
-
-    uint64_t cpuUsage = [GBDeviceUtils getCPUUsage];
-    [body setObject:@(cpuUsage) forKey:@"cpu"];
-
-    NSString *model = [GBDeviceUtils getPlatformString];
-    [body setObject:model forKey:@"model"];
-    
+    [body setObject:[GBDeviceUtils connectedToWiFi] ? @"wifi" : @"carrier" forKey:@"network"];
     [body setObject:@"ios" forKey:@"os"];
 
     GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body];
@@ -71,7 +54,7 @@ static GRClientService *sharedInstance = nil;
 
 - (void) sendPicture:(long long)clientId token:(NSString *)token recordScheduleToken:(NSString *)recordScheduleToken recordedCheck:(BOOL)recordedCheck file:(NSData *)file timestamp:(long long)timestamp success:(void (^)(GRPicture *picture))success fail:(void (^)(NSInteger status, NSError *error))fail {
     
-    NSString *path = @"v2/picture";
+    NSString *path = @"v3/picture";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
