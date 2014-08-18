@@ -121,16 +121,17 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
         if (self.client && self.client.growthbeatClientId && ![self.client.growthbeatClientId isEqualToString:growthbeatClient.id]) {
             // TODO clear client
         }
-        [self authorize];
+        
+        [self authorizeWithClientId:growthbeatClient.id credentialId:self.credentialId];
     });
     
 }
 
-- (void) authorize {
+- (void) authorizeWithClientId:(NSString *)newClientId credentialId:(NSString *)_credentialId {
     
     if (registeringClient) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kGRRegisterPollingInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
-            [self authorize];
+            [self authorizeWithClientId:newClientId credentialId:_credentialId];
         });
         return;
     }
@@ -138,7 +139,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     self.registeringClient = YES;
     [logger info:@"Authorize client... (applicationId: %d)", applicationId];
     
-    [[GRClientService sharedInstance] authorizeWithApplicationId:self.applicationId credentialId:self.credentialId client:[self loadClient] success:^(GRClient *authorizedClient){
+    [[GRClientService sharedInstance] authorizeWithClientId:newClientId credentialId:_credentialId client:[self loadClient] success:^(GRClient *authorizedClient){
         
         self.client = authorizedClient;
         self.registeringClient = NO;
@@ -169,7 +170,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 - (void) setTag:(NSString *)name value:(NSString *)value {
     
     [self runAfterRegister:^{
-        [[GRTagService sharedInstance] setTag:self.client.id token:self.client.token name:name value:value success:^(){
+        [[GRTagService sharedInstance] setTag:self.client.growthbeatClientId credentialId:self.credentialId name:name value:value success:^(){
             [logger info:@"tag save success. "];
         } fail:^(NSInteger status, NSError *error){
             [logger info:@"tag save fail. "];
@@ -207,7 +208,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     if(!client.configuration.wheres)
         recordedCheck = false;
     
-    [[GRClientService sharedInstance] sendPicture:self.client.id token:self.client.token recordScheduleToken:client.recordScheduleToken recordedCheck:recordedCheck file:data timestamp:timestamp success:^(GRPicture *picture){
+    [[GRClientService sharedInstance] sendPicture:self.client.growthbeatClientId credentialId:self.credentialId recordScheduleToken:client.recordScheduleToken recordedCheck:recordedCheck file:data timestamp:timestamp success:^(GRPicture *picture){
        
         recordedCheck = false;
         if (picture.status) {
