@@ -119,7 +119,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
         GBClient *growthbeatClient = [[GrowthbeatCore sharedInstance] waitClient];
         self.client = [self loadClient];
         if (self.client && self.client.growthbeatClientId && ![self.client.growthbeatClientId isEqualToString:growthbeatClient.id]) {
-            // TODO clear client
+            [self clearClient];
         }
         
         [self authorizeWithClientId:growthbeatClient.id credentialId:self.credentialId];
@@ -269,6 +269,13 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newClient];
     [preference setObject:data forKey:kGRPreferenceClientKey];
+    
+}
+
+- (void) clearClient {
+    
+    self.client = nil;
+    [preference removeAll];
     
 }
 
