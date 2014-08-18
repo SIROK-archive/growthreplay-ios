@@ -22,16 +22,16 @@ static GRTagService *sharedInstance = nil;
     }
 }
 
-- (void) setTag:(long long)clientId token:(NSString *)token name:(NSString *)name value:(NSString *)value success:(void (^)(void))success fail:(void (^)(NSInteger, NSError *))fail {
+- (void) setTag:(NSString *)clientId credentialId:(NSString *)credentialId name:(NSString *)name value:(NSString *)value success:(void (^)(void))success fail:(void (^)(NSInteger, NSError *))fail {
 
-    NSString *path = @"v1/tag";
+    NSString *path = @"v3/tag";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
-        [body setObject:@(clientId) forKey:@"clientId"];
+        [body setObject:clientId forKey:@"clientId"];
     }
-    if (token) {
-        [body setObject:token forKey:@"token"];
+    if (credentialId) {
+        [body setObject:credentialId forKey:@"credentialId"];
     }
     if (name) {
         [body setObject:name forKey:@"name"];
