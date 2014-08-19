@@ -25,7 +25,7 @@ static GRClientService *sharedInstance = nil;
 
 - (void) authorizeWithClientId:(NSString *)clientId credentialId:(NSString *)credentialId client:(GRClient *)client success:(void (^)(GRClient *))success fail:(void (^)(NSInteger, NSError *))fail {
 
-    NSString *path = @"v3/authorize";
+    NSString *path = @"v3/records";
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
 
     if (clientId) {
