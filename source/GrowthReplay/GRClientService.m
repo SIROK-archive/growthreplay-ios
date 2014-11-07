@@ -75,7 +75,7 @@ static GRClientService *sharedInstance = nil;
     
     [body setObject:[NSString stringWithFormat:@"%lld", timestamp] forKey:@"timestamp"];
 
-    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body contentType:GRContentTypeMultipart];
+    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body contentType:GBContentTypeMultipart];
     [self httpRequest:httpRequest success:^(GBHttpResponse *httpResponse) {
         if (success) {
             GRPicture *picture = [GRPicture domainWithDictionary:httpResponse.body];

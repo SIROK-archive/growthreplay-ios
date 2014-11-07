@@ -44,6 +44,7 @@
 		B2F4F8B51A0C4279008250A7 /* GRRecordStatus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8981A0C41A8008250A7 /* GRRecordStatus.h */; };
 		B2F4F8B61A0C4279008250A7 /* GRService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F89A1A0C41A8008250A7 /* GRService.h */; };
 		B2F4F8B71A0C4279008250A7 /* GRTagService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F89C1A0C41A8008250A7 /* GRTagService.h */; };
+		B2F4F8C21A0C4315008250A7 /* GrowthbeatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */; };
 		B2FA9D341A0C416F0015E28B /* libGrowthReplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FA9D281A0C416F0015E28B /* libGrowthReplay.a */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		B2F4F89D1A0C41A8008250A7 /* GRTagService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTagService.m; sourceTree = "<group>"; };
 		B2F4F8AA1A0C41E4008250A7 /* GrowthReplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthReplay.h; sourceTree = "<group>"; };
 		B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthReplay.m; sourceTree = "<group>"; };
+		B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
 		B2FA9D281A0C416F0015E28B /* libGrowthReplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGrowthReplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FA9D331A0C416F0015E28B /* GrowthReplayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowthReplayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FA9D391A0C416F0015E28B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F4F8C21A0C4315008250A7 /* GrowthbeatCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +176,7 @@
 		B2F4F8C01A0C42E8008250A7 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -473,6 +477,15 @@
 		B2FA9D3D1A0C416F0015E28B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../submodules/growthbeat-core-ios",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../submodules/growthbeat-core-ios/GrowthbeatCore.framework/Headers/",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
@@ -483,6 +496,15 @@
 		B2FA9D3E1A0C416F0015E28B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../submodules/growthbeat-core-ios",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../submodules/growthbeat-core-ios/GrowthbeatCore.framework/Headers/",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
