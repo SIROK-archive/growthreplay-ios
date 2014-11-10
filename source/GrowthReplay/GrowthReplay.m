@@ -74,30 +74,6 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
 }
 
-+ (void) initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId {
-    [[GrowthReplay sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId];
-}
-
-+ (void) setTag:(NSString *)name value:(NSString *)value {
-    [[GrowthReplay sharedInstance] setTag:name value:value];
-}
-
-+ (void) setDeviceTags {
-    [[GrowthReplay sharedInstance] setDeviceTags];
-}
-
-+ (void) start {
-    [[GrowthReplay sharedInstance] start];
-}
-
-+ (void) stop {
-    [[GrowthReplay sharedInstance] stop];
-}
-
-+ (void) setSpot:(NSString *)spot {
-    [[GrowthReplay sharedInstance] setSpot:spot];
-}
-
 - (id) init {
     self = [super init];
     if (self) {
