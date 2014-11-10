@@ -10,8 +10,8 @@
 #import "GBUtils.h"
 #import "GRClient.h"
 #import "GRPicture.h"
-#import "GRTagService.h"
 #import "GRRecorder.h"
+#import "GrowthAnalytics.h"
 
 static GrowthReplay *sharedInstance = nil;
 static NSString *const kGBLoggerDefaultTag = @"GrowthReplay";
@@ -174,13 +174,10 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
 - (void) setTag:(NSString *)name value:(NSString *)value {
     
-    [self runAfterRegister:^{
-        [[GRTagService sharedInstance] setTag:self.client.growthbeatClientId credentialId:self.credentialId name:name value:value success:^(){
-            [logger info:@"tag save success. "];
-        } fail:^(NSInteger status, NSError *error){
-            [logger info:@"tag save fail. "];
-        }];
-    }];
+    [logger info:@"Set tag... (name: %@)", name];
+    
+    NSString *tagId = [NSString stringWithFormat:@"Tag:Custom:%@", name];
+    [[GrowthAnalytics sharedInstance] setTag:tagId value:value];
     
 }
 

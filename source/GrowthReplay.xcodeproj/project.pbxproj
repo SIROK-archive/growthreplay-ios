@@ -29,8 +29,6 @@
 		B2F4F8A31A0C41A8008250A7 /* GRPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8951A0C41A8008250A7 /* GRPicture.m */; };
 		B2F4F8A41A0C41A8008250A7 /* GRRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8971A0C41A8008250A7 /* GRRecorder.m */; };
 		B2F4F8A51A0C41A8008250A7 /* GRRecordStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */; };
-		B2F4F8A61A0C41A8008250A7 /* GRService.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F89B1A0C41A8008250A7 /* GRService.m */; };
-		B2F4F8A71A0C41A8008250A7 /* GRTagService.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F89D1A0C41A8008250A7 /* GRTagService.m */; };
 		B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */; };
 		B2F4F8AD1A0C4279008250A7 /* GRClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88A1A0C41A8008250A7 /* GRClient.h */; };
 		B2F4F8AF1A0C4279008250A7 /* GRConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88E1A0C41A8008250A7 /* GRConfiguration.h */; };
@@ -39,8 +37,6 @@
 		B2F4F8B31A0C4279008250A7 /* GrowthReplay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8AA1A0C41E4008250A7 /* GrowthReplay.h */; };
 		B2F4F8B41A0C4279008250A7 /* GRRecorder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8961A0C41A8008250A7 /* GRRecorder.h */; };
 		B2F4F8B51A0C4279008250A7 /* GRRecordStatus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8981A0C41A8008250A7 /* GRRecordStatus.h */; };
-		B2F4F8B61A0C4279008250A7 /* GRService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F89A1A0C41A8008250A7 /* GRService.h */; };
-		B2F4F8B71A0C4279008250A7 /* GRTagService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F89C1A0C41A8008250A7 /* GRTagService.h */; };
 		B2F4F8C21A0C4315008250A7 /* GrowthbeatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */; };
 		B2FA9D341A0C416F0015E28B /* libGrowthReplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FA9D281A0C416F0015E28B /* libGrowthReplay.a */; };
 /* End PBXBuildFile section */
@@ -76,8 +72,6 @@
 				B2F4F8B31A0C4279008250A7 /* GrowthReplay.h in CopyFiles */,
 				B2F4F8B41A0C4279008250A7 /* GRRecorder.h in CopyFiles */,
 				B2F4F8B51A0C4279008250A7 /* GRRecordStatus.h in CopyFiles */,
-				B2F4F8B61A0C4279008250A7 /* GRService.h in CopyFiles */,
-				B2F4F8B71A0C4279008250A7 /* GRTagService.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +91,6 @@
 		B2F4F8971A0C41A8008250A7 /* GRRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRRecorder.m; sourceTree = "<group>"; };
 		B2F4F8981A0C41A8008250A7 /* GRRecordStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRRecordStatus.h; sourceTree = "<group>"; };
 		B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRRecordStatus.m; sourceTree = "<group>"; };
-		B2F4F89A1A0C41A8008250A7 /* GRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRService.h; sourceTree = "<group>"; };
-		B2F4F89B1A0C41A8008250A7 /* GRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRService.m; sourceTree = "<group>"; };
-		B2F4F89C1A0C41A8008250A7 /* GRTagService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTagService.h; sourceTree = "<group>"; };
-		B2F4F89D1A0C41A8008250A7 /* GRTagService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTagService.m; sourceTree = "<group>"; };
 		B2F4F8AA1A0C41E4008250A7 /* GrowthReplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthReplay.h; sourceTree = "<group>"; };
 		B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthReplay.m; sourceTree = "<group>"; };
 		B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
@@ -140,8 +130,6 @@
 				B2F4F8AA1A0C41E4008250A7 /* GrowthReplay.h */,
 				B2F4F8961A0C41A8008250A7 /* GRRecorder.h */,
 				B2F4F8981A0C41A8008250A7 /* GRRecordStatus.h */,
-				B2F4F89A1A0C41A8008250A7 /* GRService.h */,
-				B2F4F89C1A0C41A8008250A7 /* GRTagService.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -156,8 +144,6 @@
 				B2F4F8971A0C41A8008250A7 /* GRRecorder.m */,
 				B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */,
 				B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */,
-				B2F4F89B1A0C41A8008250A7 /* GRService.m */,
-				B2F4F89D1A0C41A8008250A7 /* GRTagService.m */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -340,12 +326,10 @@
 				B2F4F8A01A0C41A8008250A7 /* GRConfiguration.m in Sources */,
 				B2F4F8A31A0C41A8008250A7 /* GRPicture.m in Sources */,
 				B2F4F89E1A0C41A8008250A7 /* GRClient.m in Sources */,
-				B2F4F8A71A0C41A8008250A7 /* GRTagService.m in Sources */,
 				B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */,
 				B2F4F8A41A0C41A8008250A7 /* GRRecorder.m in Sources */,
 				B2F4F8A21A0C41A8008250A7 /* GrowthReplay.m in Sources */,
 				B2F4F8A51A0C41A8008250A7 /* GRRecordStatus.m in Sources */,
-				B2F4F8A61A0C41A8008250A7 /* GRService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
