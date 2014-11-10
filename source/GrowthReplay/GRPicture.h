@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 SIROK. All rights reserved.
 //
 
-#import "GRDomain.h"
+#import "GBDomain.h"
 
-@interface GRPicture : GRDomain<NSCoding> {
+@interface GRPicture : GBDomain<NSCoding> {
 
     BOOL continuation;
     BOOL status;
