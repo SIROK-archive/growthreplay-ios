@@ -13,9 +13,9 @@
 #import "GRRecorder.h"
 
 static GrowthReplay *sharedInstance = nil;
-//static NSString *const kGRBaseUrl = @"https://api.growthreplay.com/";
-static NSString *const kGRBaseUrl = @"http://api.localhost:8084/";
-static NSString *const kGRPreferenceFileName = @"growthreplay-preferences";
+static NSString *const kGBLoggerDefaultTag = @"GrowthReplay";
+static NSString *const kGBHttpClientDefaultBaseUrl = @"https://api.growthreplay.com/";
+static NSString *const kGBPreferenceDefaultFileName = @"growthreplay-preferences";
 static NSString *const kGRPreferenceClientKey = @"client";
 static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 
@@ -100,9 +100,9 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
 - (id) init {
     self = [super init];
     if (self) {
-        self.logger = [[GBLogger alloc] initWithTag:@"GrowthReplay"];
-        self.httpClient = [[GBHttpClient alloc] initWithBaseUrl:[NSURL URLWithString:kGRBaseUrl]];
-        self.preference = [[GBPreference alloc] initWithFileName:kGRPreferenceFileName];
+        self.logger = [[GBLogger alloc] initWithTag:kGBLoggerDefaultTag];
+        self.httpClient = [[GBHttpClient alloc] initWithBaseUrl:[NSURL URLWithString:kGBHttpClientDefaultBaseUrl]];
+        self.preference = [[GBPreference alloc] initWithFileName:kGBPreferenceDefaultFileName];
         self.recorder = [[GRRecorder alloc] init];
         self.recordedCheck = YES;
     }
