@@ -32,4 +32,6 @@
 @property (nonatomic) GRRecordStatus status;
 @property (nonatomic) GRConfiguration *configuration;
 
++ (GRClient *) authorizeWithClientId:(NSString *)clientId credentialId:(NSString *)credentialId client:(GRClient *)client;
+
 @end

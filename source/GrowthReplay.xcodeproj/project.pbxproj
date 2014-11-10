@@ -23,7 +23,6 @@
 
 /* Begin PBXBuildFile section */
 		B2F4F89E1A0C41A8008250A7 /* GRClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F88B1A0C41A8008250A7 /* GRClient.m */; };
-		B2F4F89F1A0C41A8008250A7 /* GRClientService.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F88D1A0C41A8008250A7 /* GRClientService.m */; };
 		B2F4F8A01A0C41A8008250A7 /* GRConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F88F1A0C41A8008250A7 /* GRConfiguration.m */; };
 		B2F4F8A21A0C41A8008250A7 /* GrowthReplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8931A0C41A8008250A7 /* GrowthReplay.m */; };
 		B2F4F8A31A0C41A8008250A7 /* GRPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8951A0C41A8008250A7 /* GRPicture.m */; };
@@ -33,7 +32,6 @@
 		B2F4F8A71A0C41A8008250A7 /* GRTagService.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F89D1A0C41A8008250A7 /* GRTagService.m */; };
 		B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */; };
 		B2F4F8AD1A0C4279008250A7 /* GRClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88A1A0C41A8008250A7 /* GRClient.h */; };
-		B2F4F8AE1A0C4279008250A7 /* GRClientService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88C1A0C41A8008250A7 /* GRClientService.h */; };
 		B2F4F8AF1A0C4279008250A7 /* GRConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88E1A0C41A8008250A7 /* GRConfiguration.h */; };
 		B2F4F8B11A0C4279008250A7 /* GrowthReplay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8921A0C41A8008250A7 /* GrowthReplay.h */; };
 		B2F4F8B21A0C4279008250A7 /* GRPicture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8941A0C41A8008250A7 /* GRPicture.h */; };
@@ -71,7 +69,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				B2F4F8AD1A0C4279008250A7 /* GRClient.h in CopyFiles */,
-				B2F4F8AE1A0C4279008250A7 /* GRClientService.h in CopyFiles */,
 				B2F4F8AF1A0C4279008250A7 /* GRConfiguration.h in CopyFiles */,
 				B2F4F8B11A0C4279008250A7 /* GrowthReplay.h in CopyFiles */,
 				B2F4F8B21A0C4279008250A7 /* GRPicture.h in CopyFiles */,
@@ -88,8 +85,6 @@
 /* Begin PBXFileReference section */
 		B2F4F88A1A0C41A8008250A7 /* GRClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRClient.h; sourceTree = "<group>"; };
 		B2F4F88B1A0C41A8008250A7 /* GRClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRClient.m; sourceTree = "<group>"; };
-		B2F4F88C1A0C41A8008250A7 /* GRClientService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRClientService.h; sourceTree = "<group>"; };
-		B2F4F88D1A0C41A8008250A7 /* GRClientService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRClientService.m; sourceTree = "<group>"; };
 		B2F4F88E1A0C41A8008250A7 /* GRConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRConfiguration.h; sourceTree = "<group>"; };
 		B2F4F88F1A0C41A8008250A7 /* GRConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRConfiguration.m; sourceTree = "<group>"; };
 		B2F4F8921A0C41A8008250A7 /* GrowthReplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthReplay.h; sourceTree = "<group>"; };
@@ -136,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F4F88A1A0C41A8008250A7 /* GRClient.h */,
-				B2F4F88C1A0C41A8008250A7 /* GRClientService.h */,
 				B2F4F88E1A0C41A8008250A7 /* GRConfiguration.h */,
 				B2F4F8921A0C41A8008250A7 /* GrowthReplay.h */,
 				B2F4F8941A0C41A8008250A7 /* GRPicture.h */,
@@ -153,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F4F88B1A0C41A8008250A7 /* GRClient.m */,
-				B2F4F88D1A0C41A8008250A7 /* GRClientService.m */,
 				B2F4F88F1A0C41A8008250A7 /* GRConfiguration.m */,
 				B2F4F8931A0C41A8008250A7 /* GrowthReplay.m */,
 				B2F4F8951A0C41A8008250A7 /* GRPicture.m */,
@@ -347,7 +340,6 @@
 				B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */,
 				B2F4F8A41A0C41A8008250A7 /* GRRecorder.m in Sources */,
 				B2F4F8A21A0C41A8008250A7 /* GrowthReplay.m in Sources */,
-				B2F4F89F1A0C41A8008250A7 /* GRClientService.m in Sources */,
 				B2F4F8A51A0C41A8008250A7 /* GRRecordStatus.m in Sources */,
 				B2F4F8A61A0C41A8008250A7 /* GRService.m in Sources */,
 			);

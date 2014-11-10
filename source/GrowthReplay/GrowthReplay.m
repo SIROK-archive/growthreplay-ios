@@ -8,7 +8,7 @@
 
 #import "GrowthReplay.h"
 #import "GBUtils.h"
-#import "GRClientService.h"
+#import "GRClient.h"
 #import "GRTagService.h"
 #import "GRRecorder.h"
 
@@ -138,33 +138,36 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     }
     
     self.registeringClient = YES;
-    [logger info:@"Authorize client... (applicationId: %d)", applicationId];
     
-    [[GRClientService sharedInstance] authorizeWithClientId:newClientId credentialId:_credentialId client:[self loadClient] success:^(GRClient *authorizedClient){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
-        self.client = authorizedClient;
-        self.registeringClient = NO;
-        self.pictureLimit = authorizedClient.configuration.numberOfRemaining;
-        [logger info:@"Authorize success. (clientId %ld, picture %d)", self.client.id, self.pictureLimit];
-        [self savedClient:authorizedClient];
+        [logger info:@"Authorize client... (applicationId: %d)", applicationId];
         
-        if (client.recorded || self.pictureLimit > 0) {
-            [logger info:@"This device is selected. "];
+        GRClient *authorizedClient = [GRClient authorizeWithClientId:newClientId credentialId:_credentialId client:[self loadClient]];
+        if(authorizedClient) {
+            self.client = authorizedClient;
+            self.registeringClient = NO;
+            self.pictureLimit = authorizedClient.configuration.numberOfRemaining;
+            [logger info:@"Authorize success. (clientId %ld, picture %d)", self.client.id, self.pictureLimit];
+            [self savedClient:authorizedClient];
             
-            [logger info:@"start recorder term:%d", authorizedClient.configuration.recordTerm];
-            [self.recorder startWithConfiguration:client.configuration callback:^(NSData *data, NSDate *date) {
-                [self sendPicture:data date:date];
-            }];
-            
-            if (authorizedClient.status == GRRecordStatusAlready)
-                recordedCheck = false;
-            
+            if (client.recorded || self.pictureLimit > 0) {
+                [logger info:@"This device is selected. "];
+                
+                [logger info:@"start recorder term:%d", authorizedClient.configuration.recordTerm];
+                [self.recorder startWithConfiguration:client.configuration callback:^(NSData *data, NSDate *date) {
+                    [self sendPicture:data date:date];
+                }];
+                
+                if (authorizedClient.status == GRRecordStatusAlready)
+                    recordedCheck = false;
+                
+            }
+        } else {
+            self.registeringClient = NO;
         }
         
-    } fail:^(NSInteger status, NSError *error){
-        [logger info:@"authorize fail (%@).", error.description];
-        self.registeringClient = NO;
-    }];
+    });
     
 }
 

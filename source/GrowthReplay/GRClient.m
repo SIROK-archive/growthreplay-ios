@@ -9,6 +9,8 @@
 #import "GRClient.h"
 #import "GBUtils.h"
 #import "GRConfiguration.h"
+#import "GBHttpClient.h"
+#import "GrowthReplay.h"
 
 @implementation GRClient
 
@@ -20,6 +22,32 @@
 @synthesize status;
 @synthesize recordScheduleToken;
 @synthesize configuration;
+
++ (GRClient *) authorizeWithClientId:(NSString *)clientId credentialId:(NSString *)credentialId client:(GRClient *)client {
+    
+    NSString *path = @"v3/records";
+    NSMutableDictionary *body = [NSMutableDictionary dictionary];
+    
+    if (clientId) {
+        [body setObject:clientId forKey:@"clientId"];
+    }
+    if (credentialId) {
+        [body setObject:credentialId forKey:@"credentialId"];
+    }
+    
+    [body setObject:[GBDeviceUtils connectedToWiFi] ? @"wifi" : @"carrier" forKey:@"network"];
+    [body setObject:@"ios" forKey:@"os"];
+    
+    GBHttpRequest *httpRequest = [GBHttpRequest instanceWithMethod:GBRequestMethodPost path:path query:nil body:body];
+    GBHttpResponse *httpResponse = [[[GrowthReplay sharedInstance] httpClient] httpRequest:httpRequest];
+    if(!httpResponse.success){
+        [[[GrowthReplay sharedInstance] logger] error:@"Filed to create client event. %@", httpResponse.error];
+        return nil;
+    }
+    
+    return [GRClient domainWithDictionary:httpResponse.body];
+    
+}
 
 - (id) initWithDictionary:(NSDictionary *)dictionary {
 
