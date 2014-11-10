@@ -9,6 +9,7 @@
 #import "GrowthReplay.h"
 #import "GBUtils.h"
 #import "GRClient.h"
+#import "GRPicture.h"
 #import "GRTagService.h"
 #import "GRRecorder.h"
 
@@ -212,25 +213,28 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     if(!client.configuration.wheres)
         recordedCheck = false;
     
-    [[GRClientService sharedInstance] sendPicture:self.client.growthbeatClientId credentialId:self.credentialId recordScheduleToken:client.recordScheduleToken recordedCheck:recordedCheck file:data timestamp:timestamp success:^(GRPicture *picture){
-       
-        recordedCheck = false;
-        if (picture.status) {
-            self.pictureLimit--;
-            [logger info:@"send picture success. (picture limit size %d)", self.pictureLimit];
-        } else {
-            [logger info:@"save picture failure.."];
-        }
-        
-        if (!picture.continuation || self.pictureLimit <= 0) {
-            [logger info:@"limit picture size."];
-            [self.recorder stop];
-        }
-        
-    } fail:^(NSInteger status, NSError *error) {
-        [logger info:@"send picture fail. (%@)", error.description];
-    }];
     
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        GRPicture *picture = [GRPicture sendPicture:self.client.growthbeatClientId credentialId:self.credentialId recordScheduleToken:client.recordScheduleToken recordedCheck:recordedCheck file:data timestamp:timestamp];
+        if(picture) {
+            recordedCheck = false;
+            if (picture.status) {
+                self.pictureLimit--;
+                [logger info:@"send picture success. (picture limit size %d)", self.pictureLimit];
+            } else {
+                [logger info:@"save picture failure.."];
+            }
+            
+            if (!picture.continuation || self.pictureLimit <= 0) {
+                [logger info:@"limit picture size."];
+                [self.recorder stop];
+            }
+        }
+        
+    });
+
 }
 
 - (void) start {

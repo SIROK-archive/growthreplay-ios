@@ -19,4 +19,6 @@
 @property (nonatomic) BOOL status;
 @property (nonatomic) BOOL recordedClient;
 
++ (GRPicture *) sendPicture:(NSString *)clientId credentialId:(NSString *)credentialId recordScheduleToken:(NSString *)recordScheduleToken recordedCheck:(BOOL)recordedCheck file:(NSData *)file timestamp:(long long)timestamp;
+
 @end
