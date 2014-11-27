@@ -29,7 +29,6 @@
 		B2F4F8A31A0C41A8008250A7 /* GRPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8951A0C41A8008250A7 /* GRPicture.m */; };
 		B2F4F8A41A0C41A8008250A7 /* GRRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8971A0C41A8008250A7 /* GRRecorder.m */; };
 		B2F4F8A51A0C41A8008250A7 /* GRRecordStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */; };
-		B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */; };
 		B2F4F8AD1A0C4279008250A7 /* GRClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88A1A0C41A8008250A7 /* GRClient.h */; };
 		B2F4F8AF1A0C4279008250A7 /* GRConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F88E1A0C41A8008250A7 /* GRConfiguration.h */; };
 		B2F4F8B11A0C4279008250A7 /* GrowthReplay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4F8921A0C41A8008250A7 /* GrowthReplay.h */; };
@@ -92,7 +91,6 @@
 		B2F4F8981A0C41A8008250A7 /* GRRecordStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRRecordStatus.h; sourceTree = "<group>"; };
 		B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRRecordStatus.m; sourceTree = "<group>"; };
 		B2F4F8AA1A0C41E4008250A7 /* GrowthReplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowthReplay.h; sourceTree = "<group>"; };
-		B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowthReplay.m; sourceTree = "<group>"; };
 		B2F4F8C11A0C4315008250A7 /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
 		B2FA9D281A0C416F0015E28B /* libGrowthReplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGrowthReplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FA9D331A0C416F0015E28B /* GrowthReplayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowthReplayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +140,6 @@
 				B2F4F8931A0C41A8008250A7 /* GrowthReplay.m */,
 				B2F4F8951A0C41A8008250A7 /* GRPicture.m */,
 				B2F4F8971A0C41A8008250A7 /* GRRecorder.m */,
-				B2F4F8AB1A0C41E4008250A7 /* GrowthReplay.m */,
 				B2F4F8991A0C41A8008250A7 /* GRRecordStatus.m */,
 			);
 			name = Sources;
@@ -326,7 +323,6 @@
 				B2F4F8A01A0C41A8008250A7 /* GRConfiguration.m in Sources */,
 				B2F4F8A31A0C41A8008250A7 /* GRPicture.m in Sources */,
 				B2F4F89E1A0C41A8008250A7 /* GRClient.m in Sources */,
-				B2F4F8AC1A0C41E4008250A7 /* GrowthReplay.m in Sources */,
 				B2F4F8A41A0C41A8008250A7 /* GRRecorder.m in Sources */,
 				B2F4F8A21A0C41A8008250A7 /* GrowthReplay.m in Sources */,
 				B2F4F8A51A0C41A8008250A7 /* GRRecordStatus.m in Sources */,

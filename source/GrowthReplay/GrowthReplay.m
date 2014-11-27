@@ -169,8 +169,6 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     if(!client.configuration.wheres)
         recordedCheck = false;
     
-    
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
         GRPicture *picture = [GRPicture sendPicture:self.client.growthbeatClientId credentialId:self.credentialId recordScheduleToken:client.recordScheduleToken recordedCheck:recordedCheck file:data timestamp:timestamp];
@@ -240,21 +238,6 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
     self.client = nil;
     [preference removeAll];
-    
-}
-
-- (void) runAfterRegister:(void (^)(void))runnable {
-    
-    if (client) {
-        if (runnable) {
-            runnable();
-        }
-        return;
-    }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kGRRegisterPollingInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
-        [self runAfterRegister:runnable];
-    });
     
 }
 
