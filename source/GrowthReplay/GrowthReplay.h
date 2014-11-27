@@ -15,10 +15,6 @@
 
 - (void)initializeWithApplicationId:(NSString *)applicationId credentialId:(NSString *)credentialId;
 
-- (void)setTag:(NSString *)name value:(NSString *)value;
-
-- (void)setDeviceTags;
-
 - (void)start;
 
 - (void)stop;

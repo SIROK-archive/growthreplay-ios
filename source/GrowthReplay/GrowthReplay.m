@@ -148,23 +148,6 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     
 }
 
-- (void) setTag:(NSString *)name value:(NSString *)value {
-    
-    [logger info:@"Set tag... (name: %@)", name];
-    
-    NSString *tagId = [NSString stringWithFormat:@"Tag:Custom:%@", name];
-    [[GrowthAnalytics sharedInstance] setTag:tagId value:value];
-    
-}
-
-- (void) setDeviceTags {
-    [self setTag:@"os" value:@"ios"];
-    [self setTag:@"deviceVersion" value:[NSString stringWithFormat:@"%g", [GBDeviceUtils getCurrentDeviceVersion]]];
-    [self setTag:@"deviceModel" value:[GBDeviceUtils getPlatformString]];
-    [self setTag:@"appVersion" value:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-    [self setTag:@"sdkVersion" value:@"0.3"];
-}
-
 - (void) sendPicture:(NSData *)data date:(NSDate *)date {
     
     if (![GBDeviceUtils connectedToWiFi]) {
