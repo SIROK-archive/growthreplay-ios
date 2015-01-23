@@ -91,7 +91,7 @@ static const NSTimeInterval kGRRegisterPollingInterval = 5.0f;
     self.applicationId = newApplicationId;
     self.credentialId = newCredentialId;
     
-    [GrowthbeatCore initializeWithApplicationId:applicationId credentialId:credentialId];
+    [[GrowthbeatCore sharedInstance] initializeWithApplicationId:applicationId credentialId:credentialId];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         GBClient *growthbeatClient = [[GrowthbeatCore sharedInstance] waitClient];
