@@ -7,6 +7,7 @@
 //
 
 #import "GRAppDelegate.h"
+#import <GrowthReplay/GrowthReplay.h>
 
 @implementation GRAppDelegate
 
@@ -20,8 +21,8 @@
     
     [self.window makeKeyAndVisible];
     
-    [GrowthReplay initializeWithApplicationId:@"dy6VlRMnN3juhW9L" credentialId:@"NuvkVhQtRDG2nrNeDzHXzZO5c6j0Xu5t"];
-    [GrowthReplay start];
+    [[GrowthReplay sharedInstance] initializeWithApplicationId:@"OyTg8vZd4KTNQDJ5" credentialId:@"3EKydeJ0imxJ5WqS22FJfdVamFLgu7XA"];
+    [[GrowthReplay sharedInstance] start];
     
     return YES;
 }

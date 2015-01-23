@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B25341131997ACAD004C8EDB /* GrowthbeatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25341121997ACAD004C8EDB /* GrowthbeatCore.framework */; };
+		B2F71C131A71DDEC00FC3ED0 /* GrowthbeatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F71C121A71DDEC00FC3ED0 /* GrowthbeatCore.framework */; };
+		B2F71C151A71E03800FC3ED0 /* GrowthAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F71C141A71E03800FC3ED0 /* GrowthAnalytics.framework */; };
 		C16AB7871959528E0050EA04 /* GrowthReplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16AB7861959528E0050EA04 /* GrowthReplay.framework */; };
 		C1F41B5718ACB72500F9E5D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F41B5618ACB72500F9E5D2 /* Foundation.framework */; };
 		C1F41B5918ACB72500F9E5D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F41B5818ACB72500F9E5D2 /* CoreGraphics.framework */; };
@@ -37,7 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B25341121997ACAD004C8EDB /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
+		B2F71C121A71DDEC00FC3ED0 /* GrowthbeatCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthbeatCore.framework; path = "../submodules/growthbeat-core-ios/GrowthbeatCore.framework"; sourceTree = "<group>"; };
+		B2F71C141A71E03800FC3ED0 /* GrowthAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthAnalytics.framework; path = "../submodules/growthanalytics-ios/GrowthAnalytics.framework"; sourceTree = "<group>"; };
 		C16AB7861959528E0050EA04 /* GrowthReplay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowthReplay.framework; path = ../GrowthReplay.framework; sourceTree = "<group>"; };
 		C1F41B5318ACB72500F9E5D2 /* GrowthReplaySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowthReplaySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F41B5618ACB72500F9E5D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,7 +70,8 @@
 			files = (
 				C1F41B8D18ACBBD000F9E5D2 /* SystemConfiguration.framework in Frameworks */,
 				C1F41B5918ACB72500F9E5D2 /* CoreGraphics.framework in Frameworks */,
-				B25341131997ACAD004C8EDB /* GrowthbeatCore.framework in Frameworks */,
+				B2F71C131A71DDEC00FC3ED0 /* GrowthbeatCore.framework in Frameworks */,
+				B2F71C151A71E03800FC3ED0 /* GrowthAnalytics.framework in Frameworks */,
 				C16AB7871959528E0050EA04 /* GrowthReplay.framework in Frameworks */,
 				C1F41B5B18ACB72500F9E5D2 /* UIKit.framework in Frameworks */,
 				C1F41B5718ACB72500F9E5D2 /* Foundation.framework in Frameworks */,
@@ -110,7 +113,8 @@
 		C1F41B5518ACB72500F9E5D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B25341121997ACAD004C8EDB /* GrowthbeatCore.framework */,
+				B2F71C141A71E03800FC3ED0 /* GrowthAnalytics.framework */,
+				B2F71C121A71DDEC00FC3ED0 /* GrowthbeatCore.framework */,
 				C16AB7861959528E0050EA04 /* GrowthReplay.framework */,
 				C1F41B8C18ACBBD000F9E5D2 /* SystemConfiguration.framework */,
 				C1F41B5618ACB72500F9E5D2 /* Foundation.framework */,
@@ -308,7 +312,7 @@
 		C1F41B7D18ACB72500F9E5D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -347,7 +351,7 @@
 		C1F41B7E18ACB72500F9E5D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -386,6 +390,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../",
 					"$(SRCROOT)/../submodules/growthbeat-core-ios",
+					"$(SRCROOT)/../submodules/growthanalytics-ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthReplaySample/GrowthReplaySample-Prefix.pch";
@@ -409,6 +414,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../",
 					"$(SRCROOT)/../submodules/growthbeat-core-ios",
+					"$(SRCROOT)/../submodules/growthanalytics-ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowthReplaySample/GrowthReplaySample-Prefix.pch";
